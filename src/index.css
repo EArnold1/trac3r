@@ -1,0 +1,176 @@
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+/* The theme is `data-theme` on <html>, so portaled menus and tooltips get the tokens too. */
+@custom-variant dark (&:is([data-theme='dark'] *));
+
+@theme {
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --text-label: 13px;
+  --text-label--line-height: 18px;
+  --text-dense: 14px;
+  --text-dense--line-height: 20px;
+  --text-body: 15px;
+  --text-body--line-height: 22px;
+  --text-narration: 22px;
+  --text-narration--line-height: 31px;
+  --text-result: 48px;
+  --text-result--line-height: 56px;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-tint: var(--destructive-tint);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-faint: var(--faint);
+  --color-guide: var(--guide);
+  --color-accent-ink: var(--accent-ink);
+  --color-highlight: var(--highlight);
+  --color-changed: var(--changed);
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-number: var(--syntax-number);
+  --color-syntax-string: var(--syntax-string);
+
+  /* Controls 8px, cards 12px. */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: var(--radius);
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: #f3f4f6;
+  --foreground: #161a22;
+  --card: #ffffff;
+  --card-foreground: #161a22;
+  --popover: #ffffff;
+  --popover-foreground: #161a22;
+  --primary: #0b6e78;
+  --primary-foreground: #ffffff;
+  --secondary: #e6eaf0;
+  --secondary-foreground: #161a22;
+  --muted: #eef0f4;
+  --muted-foreground: #4b5563;
+  --accent: #d8f0f1;
+  --accent-foreground: #161a22;
+  --border: #d9dde3;
+  --input: #c3c9d2;
+  --ring: #0b6e78;
+  --destructive: #b42318;
+
+  --faint: #6b7280;
+  --accent-ink: #0b5a63;
+  --highlight: #9fd6db;
+  --changed: #ffe9a8;
+  --syntax-keyword: #5b3fa0;
+  --syntax-number: #9a4400;
+  --syntax-string: #17612f;
+
+  /* The line down the left of a nested trace row. */
+  --guide: #c3c9d2;
+
+  /* Tints for error states: used with --destructive on white or on this. */
+  --destructive-tint: #fee4e2;
+
+  color-scheme: light;
+}
+
+/*
+ * Dark values are from the mockup, except: the keyword is a little lighter, to reach 4.5:1 on the
+ * highlight, and destructive, its tint and string are proposed, as in the light theme.
+ */
+:root[data-theme='dark'] {
+  --background: #0e1217;
+  --foreground: #e6eaf0;
+  --card: #161b22;
+  --card-foreground: #e6eaf0;
+  --popover: #161b22;
+  --popover-foreground: #e6eaf0;
+  --primary: #4fb8c2;
+  --primary-foreground: #04252a;
+  --secondary: #252d38;
+  --secondary-foreground: #e6eaf0;
+  --muted: #1c232c;
+  --muted-foreground: #a3adbb;
+  --accent: #12383d;
+  --accent-foreground: #e6eaf0;
+  --border: #2a323d;
+  --input: #3a4452;
+  --ring: #4fb8c2;
+  --destructive: #f97066;
+
+  --faint: #8893a3;
+  --accent-ink: #8adce4;
+  --highlight: #17525a;
+  --changed: #5a4710;
+  --syntax-keyword: #c4b1ff;
+  --syntax-number: #ffa866;
+  --syntax-string: #7ed89a;
+
+  --guide: #3a4452;
+
+  --destructive-tint: #3b1a18;
+
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background font-sans text-body text-foreground;
+  }
+  /* `<=` and `=>` must read as typed, not as one symbol. */
+  .font-mono,
+  .cm-editor {
+    font-variant-ligatures: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .frame-pushed {
+    animation: frame-pushed 180ms ease-out;
+  }
+}
+
+@keyframes frame-pushed {
+  from {
+    background-color: var(--changed);
+  }
+}
+
+/* A slim scrollbar that follows the theme, for the panels that scroll inside the page. */
+@utility scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--input) transparent;
+}
