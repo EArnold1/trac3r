@@ -1,7 +1,7 @@
 {
   "v": 3,
   "createdOnFiles": { "v": 1, "at": "2026-10-17T20:52:00Z" },
-  "title": "Execution Flow Tracer: UI Mockup",
+  "title": "exec-trac3r: UI Mockup",
   "launch": { "view": "focused", "file": "Main.dc.html" },
   "pages": [],
   "boards": {

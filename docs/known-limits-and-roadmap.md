@@ -1,4 +1,4 @@
-# Execution Flow Tracer: Known Limits, Issues and Roadmap
+# exec-trac3r: Known Limits, Issues and Roadmap
 
 Updated Oct 19, 2026. This is the living list of what the tracer does not do, what is broken or
 unverified, and what comes next. Keep it short and current: when something is fixed, move it to

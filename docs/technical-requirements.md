@@ -1,8 +1,8 @@
-# Execution Flow Tracer: Technical Requirements
+# exec-trac3r: Technical Requirements
 
 Oct 17, 2026 · @Arnold
 
-This doc fixes the stack, the TypeScript rules and the styling system for the Execution Flow Tracer. It goes with the Milestone 1 spec, which says what to build; this says how.
+This doc fixes the stack, the TypeScript rules and the styling system for exec-trac3r. It goes with the Milestone 1 spec, which says what to build; this says how.
 
 ## Stack
 
@@ -65,7 +65,7 @@ Language rules:
 The code that parses and instruments stays free of the browser, so it can be tested without one. That means the Worker and iframe code cannot live beside it. This layout replaces the file tree in the Milestone 1 spec.
 
 ```
-exec-tracer/
+exec-trac3r/
   src/
     engine/                 pure logic, no DOM, no React
       types.ts              Shown, Frame, Step, RunResult
@@ -125,7 +125,7 @@ These steps follow the [shadcn/ui Vite installation guide](https://ui.shadcn.com
 1. Create the project and choose React with TypeScript:
 
 ```bash
-pnpm create vite@latest exec-tracer
+pnpm create vite@latest exec-trac3r
 ```
 
 2. Add Tailwind and the Node types Vite needs for the `@` alias:

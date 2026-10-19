@@ -41,7 +41,7 @@ export function Header(props: HeaderProps) {
           <rect x="9" y="11" width="10" height="7" rx="2" />
           <rect x="15" y="19" width="10" height="7" rx="2" />
         </svg>
-        <h1 className="text-xl/7 font-semibold">Execution Flow Tracer</h1>
+        <h1 className="text-xl/7 font-semibold">exec-trac3r</h1>
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <label htmlFor="example" className="text-dense text-muted-foreground">

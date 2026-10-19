@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(import.meta.dirname, './src') },
   },
+  server: { port: 3000 },
   test: {
     include: [
       'tests/engine/**/*.test.ts',

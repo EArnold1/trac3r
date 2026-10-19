@@ -6,10 +6,10 @@ export default defineConfig({
   reporter: 'list',
   // Each run boots a sandbox iframe and Worker, which Firefox can take a few seconds to do cold.
   expect: { timeout: 10_000 },
-  use: { baseURL: 'http://localhost:5173' },
+  use: { baseURL: 'http://localhost:3000' },
   webServer: {
-    command: 'pnpm dev --port 5173 --strictPort',
-    url: 'http://localhost:5173',
+    command: 'pnpm dev',
+    url: 'http://localhost:3000',
     reuseExistingServer: true,
   },
   projects: [

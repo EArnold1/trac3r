@@ -1,4 +1,4 @@
-# Execution Flow Tracer
+# exec-trac3r
 
 A web app for understanding how code runs. Paste code (JavaScript today, more languages planned), press Run, and get two things from the same run:
 

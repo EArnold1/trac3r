@@ -4,7 +4,7 @@ import { FACTORIAL, expandAll, pasteCode, pressRun, traceRow, traceRows } from '
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByRole('heading', { name: 'Execution Flow Tracer' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'exec-trac3r' })).toBeVisible()
 })
 
 test('paste factorial, run, get 6, jump to step 7 and see true', async ({ page }) => {
@@ -322,7 +322,7 @@ test('running or stepping does not scroll the page away from the header', async 
   await page.getByRole('button', { name: 'Next step' }).click()
   await expect(page.getByText('Step 2 of 11', { exact: true })).toBeVisible()
   expect(await page.evaluate(() => window.scrollY)).toBe(0)
-  await expect(page.getByRole('heading', { name: 'Execution Flow Tracer' })).toBeInViewport()
+  await expect(page.getByRole('heading', { name: 'exec-trac3r' })).toBeInViewport()
 })
 
 test('the trace list scrolls to keep the current step in view', async ({ page }) => {

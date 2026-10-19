@@ -1,4 +1,4 @@
-# Execution Flow Tracer: Milestone 1 Spec
+# exec-trac3r: Milestone 1 Spec
 
 Oct 17, 2026 · @Arnold
 
@@ -178,7 +178,7 @@ In the stack column, `f` stands for `factorial`, `main` is the top level, and th
 TypeScript, Vite, React, Tailwind and shadcn/ui for the app; `acorn` and `magic-string` for parsing and instrumenting; CodeMirror 6 for the editor; Vitest and Playwright for tests. The Technical Requirements doc has the full stack, the TypeScript rules and the styling system. Ask before adding any other library.
 
 ```
-exec-tracer/
+exec-trac3r/
   src/
     engine/                 pure logic, no DOM, no React
       types.ts              Shown, Frame, Step, RunResult
